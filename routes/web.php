@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function () {
+    return view('prueba');
+})->name('hola');
+
+Route::get('/prueba2', function (){
+    $msj = "Holi crayoli👻";
+    $data = [
+        'msj' => $msj,
+        'num' => 3
+    ];
+    return view('prueba2', $data);
+});
