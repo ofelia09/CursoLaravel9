@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Test2Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +30,19 @@ Route::get('/prueba2', function (){
         'num' => 3
     ];
     return view('prueba2', $data);
+});
+
+
+Route::get('/',[TestController::class, 'test']);
+Route::get('/index',[Test2Controller::class, 'index']);
+
+Route::get('/home', function (){
+    $data = [
+        "nombre",
+        "edad",
+        "correo",
+        "id_profesor",
+        "contrasena"
+    ];
+    return view('home',["data" => $data]);
 });
