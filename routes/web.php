@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Gestion\PostController2;
 use App\Http\Controllers\Test2Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
@@ -19,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
 Route::get('/test', function () {
     return view('prueba');
 })->name('hola');
@@ -46,3 +48,6 @@ Route::get('/home', function (){
     ];
     return view('home',["data" => $data]);
 });
+*/
+
+Route::resource('post2', PostController2::class);
